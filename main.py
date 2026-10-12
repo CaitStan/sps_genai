@@ -1,7 +1,9 @@
 import spacy
 from fastapi import FastAPI
+from cnn_assignment.api import router as cnn_router
 
 app = FastAPI()
+app.include_router(cnn_router)
 
 # Load the spaCy model containing pretrained word embeddings
 nlp = spacy.load("en_core_web_lg")

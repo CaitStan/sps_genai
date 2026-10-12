@@ -1,0 +1,67 @@
+Assignment 2 - Theory: Arithmetic of CNNs
+
+For a convolution or pooling layer with dilation 1, each spatial dimension is:
+output = floor((input + 2 * padding - kernel_size) / stride) + 1.
+Shapes below use height x width x channels unless stated otherwise.
+
+1. Input 32 x 32 x 3, eight 5 x 5 filters, stride 1, no padding.
+   Spatial size = floor((32 - 5) / 1) + 1 = 28.
+   Each filter produces one output channel, so the output is 28 x 28 x 8.
+   Each filter spans all three input channels.
+
+2. Change Question 1 to "same" padding.
+   With stride 1, same padding preserves height and width. A 5 x 5 kernel
+   needs two pixels of padding on each side. The output is 32 x 32 x 8.
+
+3. Input 64 x 64, 3 x 3 filter, stride 2, no padding.
+   Spatial size = floor((64 - 3) / 2) + 1 = floor(30.5) + 1 = 31.
+   The output spatial size is 31 x 31. The floor matters: the last filter
+   placement must fit inside the input. Output channels depend on filter count.
+
+4. A 2 x 2 max-pooling layer with stride 2 on a 16 x 16 feature map.
+   With no padding, floor((16 - 2) / 2) + 1 = 8.
+   The output is 8 x 8. Pooling preserves the number of channels.
+
+5. Input 128 x 128, two successive 3 x 3 convolutions, stride 1, same padding.
+   Each layer preserves the spatial dimensions, so the final spatial shape is
+   128 x 128. Each layer pads one pixel on each side. If there are multiple
+   output channels, the complete shape is 128 x 128 x F, where F is the number
+   of filters in the second convolution. F is not specified in the question.
+
+6. What happens if model.train() is removed before the training loop?
+   model.train() sets the model and its submodules to training mode. New PyTorch
+   modules start in training mode, so omitting this line immediately after
+   constructing a model usually changes nothing. If model.eval() was called
+   earlier, however, the model stays in evaluation mode until train() is called.
+
+   This matters for mode-dependent layers. Dropout is disabled in evaluation
+   mode. Standard BatchNorm uses stored running statistics in evaluation mode
+   instead of batch statistics and does not update those running statistics.
+   Leaving these layers in evaluation mode can change training behavior.
+
+   This assignment's CNN contains only convolution, ReLU, max pooling, flatten,
+   and linear layers, so train() and eval() produce the same forward behavior.
+   Removing train() therefore does not change the computations in this specific
+   architecture. It is still good practice to call it at the start of every
+   training epoch, especially after validation calls model.eval().
+
+   train() does not perform training or enable gradients by itself, and eval()
+   does not disable gradients. Training requires loss calculation, backward(),
+   and an optimizer step. no_grad() or inference_mode() separately disables
+   gradient tracking during evaluation.
+
+Architecture check (PyTorch uses batch x channels x height x width):
+Input              N x 3 x 64 x 64
+Conv1 + ReLU       N x 16 x 64 x 64
+MaxPool1           N x 16 x 32 x 32
+Conv2 + ReLU       N x 32 x 32 x 32
+MaxPool2           N x 32 x 16 x 16
+Flatten            N x 8192
+Linear + ReLU      N x 100
+Final linear       N x 10
+Total trainable parameters including biases: 825,398.
+
+References:
+https://docs.pytorch.org/docs/stable/notes/modules.html
+https://docs.pytorch.org/docs/stable/notes/autograd
+https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html
