@@ -1,0 +1,178 @@
+{
+  "dataset": "MNIST training split",
+  "training_examples": 60000,
+  "epochs_completed": 20,
+  "seed": 42,
+  "sample_seed": 123,
+  "device": "mps",
+  "batch_size": 128,
+  "learning_rate": 0.0002,
+  "adam_betas": [
+    0.5,
+    0.999
+  ],
+  "elapsed_seconds": 716.6039814170217,
+  "history": [
+    {
+      "epoch": 1,
+      "examples": 60000,
+      "generator_loss": 2.369156473058462,
+      "discriminator_loss": 0.5216790634075801,
+      "d_real_mean": 0.8130535144488017,
+      "d_fake_mean": 0.19423907102346422
+    },
+    {
+      "epoch": 2,
+      "examples": 60000,
+      "generator_loss": 1.9125273421764373,
+      "discriminator_loss": 0.5316477649688721,
+      "d_real_mean": 0.7911048844496409,
+      "d_fake_mean": 0.20821475836634637
+    },
+    {
+      "epoch": 3,
+      "examples": 60000,
+      "generator_loss": 1.7903566074530284,
+      "discriminator_loss": 0.6574224224726359,
+      "d_real_mean": 0.7594416714350383,
+      "d_fake_mean": 0.24130880324790874
+    },
+    {
+      "epoch": 4,
+      "examples": 60000,
+      "generator_loss": 1.7971966939926147,
+      "discriminator_loss": 0.6717875371932983,
+      "d_real_mean": 0.7567528096516927,
+      "d_fake_mean": 0.243028186677893
+    },
+    {
+      "epoch": 5,
+      "examples": 60000,
+      "generator_loss": 1.738708837747574,
+      "discriminator_loss": 0.7095702520688375,
+      "d_real_mean": 0.7443209709326426,
+      "d_fake_mean": 0.2559909877642989
+    },
+    {
+      "epoch": 6,
+      "examples": 60000,
+      "generator_loss": 1.8801796618143718,
+      "discriminator_loss": 0.6156794036229452,
+      "d_real_mean": 0.773068004544576,
+      "d_fake_mean": 0.22801187190612157
+    },
+    {
+      "epoch": 7,
+      "examples": 60000,
+      "generator_loss": 1.963076280172666,
+      "discriminator_loss": 0.5933520805676779,
+      "d_real_mean": 0.7825716564973195,
+      "d_fake_mean": 0.2173252951323986
+    },
+    {
+      "epoch": 8,
+      "examples": 60000,
+      "generator_loss": 2.133028195889791,
+      "discriminator_loss": 0.5185939442316692,
+      "d_real_mean": 0.8078247988700866,
+      "d_fake_mean": 0.19307179277564088
+    },
+    {
+      "epoch": 9,
+      "examples": 60000,
+      "generator_loss": 2.175759911060333,
+      "discriminator_loss": 0.5772495974222819,
+      "d_real_mean": 0.7990296833992004,
+      "d_fake_mean": 0.19947327577521404
+    },
+    {
+      "epoch": 10,
+      "examples": 60000,
+      "generator_loss": 2.2003948049704234,
+      "discriminator_loss": 0.5174587435881297,
+      "d_real_mean": 0.8101221237182618,
+      "d_fake_mean": 0.19137069848974544
+    },
+    {
+      "epoch": 11,
+      "examples": 60000,
+      "generator_loss": 2.2788457409858704,
+      "discriminator_loss": 0.5399617220242818,
+      "d_real_mean": 0.8095460062344869,
+      "d_fake_mean": 0.19020173536806056
+    },
+    {
+      "epoch": 12,
+      "examples": 60000,
+      "generator_loss": 2.4473429886182148,
+      "discriminator_loss": 0.44700115620295205,
+      "d_real_mean": 0.8361879224618276,
+      "d_fake_mean": 0.16348562551935514
+    },
+    {
+      "epoch": 13,
+      "examples": 60000,
+      "generator_loss": 2.5528655117352805,
+      "discriminator_loss": 0.38578429651260376,
+      "d_real_mean": 0.8529164147377014,
+      "d_fake_mean": 0.1485349935054779
+    },
+    {
+      "epoch": 14,
+      "examples": 60000,
+      "generator_loss": 2.413349251635869,
+      "discriminator_loss": 0.5665349905172984,
+      "d_real_mean": 0.8147055485741003,
+      "d_fake_mean": 0.1843616276046051
+    },
+    {
+      "epoch": 15,
+      "examples": 60000,
+      "generator_loss": 2.588221468194326,
+      "discriminator_loss": 0.44388106253941856,
+      "d_real_mean": 0.8429517076333364,
+      "d_fake_mean": 0.156610048995167
+    },
+    {
+      "epoch": 16,
+      "examples": 60000,
+      "generator_loss": 2.695462190961838,
+      "discriminator_loss": 0.3957527324517568,
+      "d_real_mean": 0.8571384917418162,
+      "d_fake_mean": 0.1433105078076323
+    },
+    {
+      "epoch": 17,
+      "examples": 60000,
+      "generator_loss": 2.7256421415964764,
+      "discriminator_loss": 0.42561938738822935,
+      "d_real_mean": 0.8508108254432678,
+      "d_fake_mean": 0.14910420121910672
+    },
+    {
+      "epoch": 18,
+      "examples": 60000,
+      "generator_loss": 2.7703446828842164,
+      "discriminator_loss": 0.3964835576693217,
+      "d_real_mean": 0.8588316508134206,
+      "d_fake_mean": 0.14108923207274637
+    },
+    {
+      "epoch": 19,
+      "examples": 60000,
+      "generator_loss": 2.8777658383369444,
+      "discriminator_loss": 0.38827175941467285,
+      "d_real_mean": 0.8621864156723023,
+      "d_fake_mean": 0.13741192716906467
+    },
+    {
+      "epoch": 20,
+      "examples": 60000,
+      "generator_loss": 2.8109210470835366,
+      "discriminator_loss": 0.4323872354030609,
+      "d_real_mean": 0.854565120090746,
+      "d_fake_mean": 0.1453445901390567
+    }
+  ],
+  "note": "GAN losses are not classification accuracy. Final epoch checkpoint; no cherry-picked images."
+}

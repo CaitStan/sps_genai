@@ -15,6 +15,7 @@ dependencies = [
     "torchvision>=0.21,<1",
     "python-multipart>=0.0.20,<1",
     "pillow>=10.4,<13",
+    "matplotlib>=3.9,<4",
 ]
 
 [project.scripts]
