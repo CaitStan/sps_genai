@@ -1,0 +1,16 @@
+**
+!Dockerfile
+!requirements-docker.txt
+!main.py
+!docker_smoke_test.py
+!cnn_assignment/
+!cnn_assignment/*.py
+!gan_assignment/
+!gan_assignment/*.py
+!helper_lib/
+!helper_lib/*.py
+!models/
+!models/cifar10_cnn.pt
+!models/example_cifar10.png
+!models/gan/
+!models/gan/mnist_gan.pt

@@ -1,0 +1,8 @@
+# Deployment versions match the tested project; CPU torch/torchvision are installed in Dockerfile.
+fastapi==0.141.1
+uvicorn==0.54.0
+spacy==3.8.16
+python-multipart==0.0.32
+Pillow==12.3.0
+matplotlib==3.11.2
+en-core-web-lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl

@@ -1,0 +1,5 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"

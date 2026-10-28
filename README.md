@@ -4,6 +4,26 @@ The CNN uses two convolutional layers, ReLU activations, max-pooling layers, and
 The classifier was trained on CIFAR-10 and achieved 64.47% test accuracy.
 The trained model is integrated into the existing FastAPI application through a prediction endpoint.
 
+## Docker deployment (for the assignment rubric)
+
+Install Docker with Compose, then run from this repository:
+
+```sh
+docker compose up --build -d --wait
+docker compose exec -T api python docker_smoke_test.py
+```
+
+Open http://localhost:8000/docs or
+http://localhost:8000/gan/generate?num_samples=16&seed=42 .
+The image includes both trained neural networks and the spaCy language model.
+No host Python, GPU, training, or separate model download is needed. The first
+build downloads dependencies and the language model, so allow several minutes.
+The API binds to `0.0.0.0:8000` inside the container and publishes port 8000.
+The Docker smoke test queries the actual server, including the original embedding
+route, CNN prediction, and GAN image generation. Stop it with `docker compose down`.
+Set `PORT` if host port 8000 is occupied. Docker uses CPU inference on either
+supported Linux ARM64 or AMD64 hosts; the image builds for the host architecture.
+
 ## Assignment 3: MNIST GAN
 
 The GAN follows the assigned 100-dimensional noise -> 7x7x128 -> 14x14x64 ->
